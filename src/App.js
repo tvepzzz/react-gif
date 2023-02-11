@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+
+import { ChakraProvider, Container } from '@chakra-ui/react'
+import Random from './components/Random'
+import Tag from './components/Tag'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ChakraProvider>
+			<h1 className="font-bold text-2xl text-center">GIF Generator</h1>
+			<Container
+				maxW="8xl"
+				className="flex flex-row flex-wrap gap-10 items-center justify-center my-6"
+			>
+				<Random />
+				<Tag />
+			</Container>
+		</ChakraProvider>
+	)
 }
 
-export default App;
+export default App
